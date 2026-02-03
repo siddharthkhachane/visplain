@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visplain - Turn any topic into a short explainer video</title>
+    <link rel="stylesheet" href="/assets/styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">
+                <span class="logo-text">Visplain</span>
+                <span class="beta-pill">Beta</span>
+            </div>
+        </header>
+
+        <main>
+            <section class="hero">
+                <h1>Turn any topic into a short explainer video</h1>
+            </section>
+
+            <section class="card">
+                <form id="generateForm">
+                    <div class="form-group">
+                        <label for="topic">Topic</label>
+                        <textarea 
+                            id="topic" 
+                            name="topic" 
+                            rows="3" 
+                            placeholder="e.g., How does photosynthesis work?"
+                            required
+                        ></textarea>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="audience">Audience</label>
+                            <select id="audience" name="audience" required>
+                                <option value="beginner">Beginner</option>
+                                <option value="intermediate">Intermediate</option>
+                                <option value="advanced">Advanced</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="duration">Duration</label>
+                            <select id="duration" name="duration" required>
+                                <option value="10">10 sec</option>
+                                <option value="12">12 sec</option>
+                                <option value="15">15 sec</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="style">Style</label>
+                            <select id="style" name="style" required>
+                                <option value="clean educational">Clean Educational</option>
+                                <option value="cinematic">Cinematic</option>
+                                <option value="sketch">Sketch</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="generate-btn" id="generateBtn">
+                        Generate Video
+                    </button>
+                </form>
+
+                <div class="progress-section" id="progressSection" style="display: none;">
+                    <div class="spinner"></div>
+                    <p class="progress-text" id="progressText">Initializing...</p>
+                    <div class="progress-bar">
+                        <div class="progress-fill" id="progressFill"></div>
+                    </div>
+                </div>
+
+                <div class="video-section" id="videoSection" style="display: none;">
+                    <video id="videoPlayer" controls></video>
+                    <button class="download-btn" id="downloadBtn">
+                        Download MP4
+                    </button>
+                </div>
+
+                <div class="report-section" id="reportSection" style="display: none;">
+                    <h3>Self-Check Report</h3>
+                    <div class="report-content" id="reportContent"></div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="/assets/app.js"></script>
+</body>
+</html>
